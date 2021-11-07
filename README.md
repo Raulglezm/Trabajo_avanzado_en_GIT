@@ -1,4 +1,5 @@
 # Trabajo_avanzado_en_GIT
+![image](https://user-images.githubusercontent.com/91153605/140666793-e06902e4-2315-469a-a483-8d57f4ae9215.png)
 
 ### PASO NECESARIO:
 
@@ -10,7 +11,7 @@ cd libro
 ```
 ### EJERCICIO 1:
 ###### En este ejercicio tendremos que mostrar el historial de cambios de un repositorio:
-1. Empezaremos viendo el historial con el comado ```git log```
+1. Empezaremos viendo el historial con el comando ```git log```
 
 ![image](https://user-images.githubusercontent.com/91153605/140664896-86ec1acd-2cff-4e97-944b-145ee6a98139.png)
 
@@ -32,7 +33,7 @@ cd libro
 ![image](https://user-images.githubusercontent.com/91153605/140663938-5a5f4cf8-84bb-48e3-a7fb-4bcb3cec3bd8.png)
 ![image](https://user-images.githubusercontent.com/91153605/140664930-20c90584-cd07-45f6-869e-eb4331d40c43.png)
 
-6. Por último volveremos a mostrar los el historial de cambio con el comando ```git log```
+6. Por último, volveremos a mostrar los el historial de cambio con el comando ```git log```
 ######
 ![image](https://user-images.githubusercontent.com/91153605/140665000-b394a6a1-0268-4829-bf20-de745481cda8.png)
 
@@ -67,9 +68,9 @@ cd libro
 
 
 ### EJERCICIO 3
-###### En este ejecicio tendremos que mostrar la difrecncia entre la última y la primera version del repositorio:
+###### En este ejercicio tendremos que mostrar la diferecncia entre la última y la primera versión del repositorio:
 
-1. Primero crearemos el nuevo fichreo con el mensaje: ```Git permite la creación de ramas lo que permite tener distintas versiones del mismo proyecto y trabajar de manera simultanea en ellas.```
+1. Primero crearemos el nuevo fichero con el mensaje: ```Git permite la creación de ramas lo que permite tener distintas versiones del mismo proyecto y trabajar de manera simultanea en ellas.```
 ###### Para esto utilizáremos el comando ```cat > capitulos/capitulo3.txt```.
 
 ![image](https://user-images.githubusercontent.com/91153605/140664503-cf8f5c56-468d-4250-92a8-1d716e61550e.png)
@@ -114,7 +115,7 @@ cd libro
 
 ###### En este ejercicio crearemos una rama y mostraremos las ramas creadas: 
 
-1. Usaremos unicamente dos comandos: 
+1. Usaremos únicamente dos comandos: 
 
 ```
   git branch bibliografia
@@ -149,7 +150,7 @@ cd libro
 
 ### EJERCICIO 7
 
-###### En este ejercicio mostaremos trabajaremos en la rama bibliografía: 
+###### En este ejercicio mostraemos trabajaremos en la rama bibliografía: 
 
 1. Primero nos situaremos en la rama bibliografía: 
 
@@ -173,17 +174,90 @@ Ctrl+D
 ###### Utilizáremos los comandos: ```git add .``` y ```git commit -m "Añadida primera referencia bibliográfica.".
 ![image](https://user-images.githubusercontent.com/91153605/140665852-52449d58-ff60-451d-a073-fd65dd46a81d.png)
 
-4. Por último mostraremos el historial con el comando: 
+4. Por último, mostraremos el historial con el comando: 
 
 ```git log --graph --all --oneline ```
 ![image](https://user-images.githubusercontent.com/91153605/140665904-337f8d17-89fe-450f-aa91-9d938088d7b6.png)
 
 
 ### EJERCICIO 8
+###### En este ejercicio fusionaremos ramas: 
+
+1. Nos situamos en la rama main y realizamos un merge de la rama bibliografia: 
+
+2. MOstramos el historial del repositorio. 
+
+3. Eliminamos la rama bibliografia:
+
+4. Y volvemos a mostrar el historial:
+###### 
+![image](https://user-images.githubusercontent.com/91153605/140666206-0ff2605a-2b69-4b37-b671-f854ef918672.png)
+
+```
+git checkout main
+git merge bibliografia
+git log --graph --all --oneline
+git branch -d bibliografia
+git log --graph --all --oneline
+```
 
 
+###### Al no copiarse al completo la rama bibliografía, no la terminé de borrar por desconocimiento de lo que faltaba por copiar, pero posteriormente fue borrada para poder realizar el ejercicio 9.
 
 ### EJERCICIO 9
+
+1. Crearemos la rama bibliografia, nos posicionamos en ella y le añadimos texto: 
+
+```
+> git branch bibliografia
+> git checkout bibliografia
+> cat > bibliografia.txt
+Scott Chacon and Ben Straub. Pro Git. Apress.
+Ryan Hodson. Ry's Git Tutorial. Smashwords (2014)
+```
+![image](https://user-images.githubusercontent.com/91153605/140666324-49c39b2a-775b-419f-857b-fabe25fa7348.png)
+
+2. realizamos commit y no movemos a la rama main donde crearemos un txt: 
+
+```
+git commit -a -m "Añadida nueva referencia bibliográfica."
+> git checkout main
+> cat > bibliografia.txt
+- Chacon, S. and Straub, B. Pro Git. Apress.
+- Loeliger, J. and McCullough, M. Version control with Git. O'Reilly.
+Ctrl+D
+```
+![image](https://user-images.githubusercontent.com/91153605/140666382-d4032995-b52c-4276-b6d2-c9bbca68403f.png)
+
+3. Ahora añadiremos los cambios y fusionaremos las ramas.
+
+```
+git commit -a -m "Añadida nueva referencia bibliográfica."
+git merge bibliografia
+```
+![image](https://user-images.githubusercontent.com/91153605/140666443-2e5d0c19-fdfe-4e8e-b86a-ff7e77409980.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
